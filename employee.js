@@ -76,16 +76,16 @@ addRole = () => {
 }
 
 
-addEmployee = () => {
+addDepartment = () => {
     inquirer.prompt({
-        name: "addEmployee",
+        name: "addDepartment",
         type: "input",
-        message: "Which employee would you like to add?"
+        message: "Which department would you like to add?"
     })
     .then(function(answers){
-        connection.query("INSERT INTO employee (name) VALUES (?)", answers.addEmployee, function (err, res){
+        connection.query("INSERT INTO department (name) VALUES (?)", answers.addDepartment, function (err, res){
             if (err) throw err;
-            console.log("New employee successfully added");
+            console.log("New department successfully added");
             userPropmt(connection);
         });
     })
