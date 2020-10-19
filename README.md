@@ -20,7 +20,7 @@ So that I can organize and plan my business
 ### Dependencies
 * [Inquirer](https://www.npmjs.com/package/inquirer)
 * [mySQL](https://www.npmjs.com/package/mysql)
-* [mySQL](https://www.npmjs.com/package/console.table)
+* [console.table](https://www.npmjs.com/package/console.table)
 
 ### Contact
 Melanie DeBarros
