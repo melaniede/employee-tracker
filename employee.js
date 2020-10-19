@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const consoleTable = require("console.table");
 
 const connection = require("./connection.js");
+const { connectableObservableDescriptor } = require("rxjs/internal/observable/ConnectableObservable");
 
 
 // Add departments, roles, employees
@@ -19,6 +20,9 @@ userPropmt = (connection) => {
                 "Add Department",
                 "Add Employee",
                 "Add Role",
+                "View Department",
+                "View Role",
+                "View Employee",
                 "Exit"
             ]
         }
@@ -32,6 +36,15 @@ userPropmt = (connection) => {
                 break;
             case "Add Employee":
                 addEmployee();
+                break;
+            case "View Department":
+                viewDepartment();
+                break;
+            case "View Role":
+                viewRole();
+                break;
+            case "View Employee":
+                viewEmployee();
                 break;
             case "Exit":
                 connection.end();
@@ -140,6 +153,29 @@ addEmployee = () => {
     })
 }
 
+viewDepartment = () => {
+    connection.query("SELECT * from department", function (err, res){
+        if (err) throw err;
+        console.table(res);
+        userPropmt(connection);
+    });
+}
+
+viewRole = () => {
+    connection.query("SELECT * from role", function (err, res) {
+      if (err) throw err;
+      console.table(res);
+      userPropmt(connection);
+    });
+}
+
+viewEmployee = () => {
+    connection.query("SELECT * from employee", function (err, res) {
+      if (err) throw err;
+      console.table(res);
+      userPropmt(connection);
+    });
+}
 
 userPropmt();
 
