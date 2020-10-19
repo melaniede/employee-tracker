@@ -4,10 +4,10 @@
 Use this Node CLI app to manage your organization's employees. The app prompts users to add employee data, role data, and department data. The data is saved to a corresponding mySQL database. The application also allows users to view information from the employee, role, and department tables. 
 
 ## View Tables and Prompt Options
-<img src="/assets/images/view_tables.png">
+<img src="/assets/images/view_tables.png" width="300"/>
 
 ## User Prompts
-<img src="/assets/images/user_prompts.png" width="300" height="300"/>
+<img src="/assets/images/user_prompts.png" width="300"/>
 
 
 ### User Story
